@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body class="ms-2 me-2">
+    <div class="col-lg-7 col-md-7 col-sm-9 mt-lg-4 mt-md-4 mt-sm-2 mx-auto shadow p-4 rounded-3" style="background-color: #032d60;">
+        <p class=" fs-3 text-info">Check your grade here:</p>
+        <div class="form-group my-2">
+            <input type="number" placeholder="Input your score" id="score" class="form-control shadow-sm p-2">
+        </div>
+        <div class="form-group my-4">
+            <button class="btn btn-info w-100" onclick="checkScore()">Check</button>
+        </div>
+        <div class="text-center border p-1 fs-4 fw-bold rounded-3 bg-light" id="showScore"><span style="color: white;">0</span></div>
+    </div>
+
+
+    <script>
+        function checkScore() {
+            // alert("I am working")
+            var score = document.getElementById("score").value;
+             if (score == "") {
+                var wrong = "input your scores!!!"
+                showScore.innerHTML = wrong;
+                showScore.style.color = "red"
+            }  else if (score >= 0 && score <= 39) {
+                // alert("You failed")
+                var result = "You failed";
+                showScore.innerHTML = result;
+                showScore.style.color = "red";
+            } else if (score >= 0 && score <= 44) {
+                var Pass = "You Passed";
+                showScore.innerHTML = Pass
+                showScore.style.color = "black";
+            } else if (score >=0 && score <= 49) {
+                var Average = "Average";
+                showScore.innerHTML = Average;
+                showScore.style.color = "black";
+            } else if (score >=0 && score <= 59) {
+                var Credit = "Credit";
+                showScore.innerHTML = Credit;
+                showScore.style.color = "black";
+           } else if (score >=0 && score <= 69) {
+                var Good = "Good";
+                showScore.innerHTML = Good;
+                showScore.style.color = "black";
+           } else if (score >=0 && score <= 100) {
+                var Excellent = "Excellent";
+                showScore.innerHTML = Excellent;
+                showScore.style.color = "green";
+           } else {
+                var invalid = "invalid score!!!"
+                showScore.innerHTML = invalid;
+                showScore.style.color = "red"
+           } 
+       }
+    </script>
+</body>
+</html>
